@@ -9,4 +9,13 @@ test.describe('Test Home Page', () => {
     await expect(text).toEqual('Hello World!');
 
   });
+
+  test('Failed', async ({ page }) => {
+    await page.goto('/')
+    
+    const text = await page.locator('body').innerText();
+    
+    await expect(text).toEqual('Hello World!');
+
+  });
 });
